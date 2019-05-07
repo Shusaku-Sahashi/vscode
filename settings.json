@@ -1,0 +1,61 @@
+{
+  "extensions.autoUpdate": false,
+  "vim.useSystemClipboard": true,
+  "editor.wordWrap": "on", // エディターの幅で折り返し
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "window.zoomLevel": -1,
+  "extensions.autoUpdate": true,
+  "java.jdt.ls.vmargs": "-noverify  -Dfile.encoding=utf8 -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/Users/shusaku/.vscode/extensions/gabrielbb.vscode-lombok-0.9.8/server/lombok.jar\"",
+  //"java.debug.settings.enableHotCodeReplace": true,
+  "workbench.iconTheme": "material-icon-theme",
+
+  // ***** setting for pritter and ESLint *******
+  "prettier.eslintIntegration": true, //prettier-eslintを使うようになる
+  "eslint.enable": true, // ESLint有効化
+  // 適応するファイルタイプを決定
+  "eslint.validate": [
+    "javascript",
+    {
+      "language": "vue",
+      "autoFix": true
+    }
+  ],
+  // プロジェクト配下のeslintrc.jsを読み込み
+  "eslint.options": {
+    "configFile": ".eslintrc.js"
+  },
+  // 保存時にESLint--fixで自動フォーマット どちらかで良い
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": false,
+  "java.home": "/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home",
+
+  // setting for vim
+  "vim.useSystemClipboard": true,
+  "go.useLanguageServer": true,
+  "search.location": "panel",
+  "vim.leader": "<space>",
+
+  // setting for go
+  "go.gopath": "/Users/shusaku/go",
+  "go.formatTool": "goimports",
+  "go.useLanguageServer": true,
+  "go.languageServerExperimentalFeatures": {
+    "diagnostics": true // for diagnostics as you type
+  },
+
+  "go.languageServerFlags": ["-trace"],
+  "[go]": {
+    "editor.snippetSuggestions": "none",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "gopls": {
+    "usePlaceholders": true, // add parameter placeholders when completing a function
+    "enhancedHover": true // experimental to improve quality of hover (will be on by default soon)
+  },
+  "go.formatOnSave": true
+}
