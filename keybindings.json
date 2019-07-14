@@ -15,18 +15,42 @@
     "command": "editor.action.goToDeclaration",
     "when": "editorFocus"
   },
-  // 手前のエディターに移動
+  //　宣言箇所を見る。
+  {
+    "key": "ctrl+u ctrl+f",
+    "command": "editor.action.previewDeclaration",
+    "when": "editorFocus"
+  },
+  // windowの移動
   {
     "key": "ctrl+w ctrl+h",
-    "command": "workbench.action.previousEditor",
+    "command": "workbench.action.focusLeftGroup",
     "when": "editorFocus"
   },
   {
     "key": "ctrl+w ctrl+l",
+    "command": "workbench.action.focusRightGroup",
+    "when": "editorFocus && vim.mode == 'Normal'"
+  },
+  // バッファー間の移動
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.previousEditor",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+p",
     "command": "workbench.action.nextEditor",
     "when": "editorFocus && vim.mode == 'Normal'"
   },
-
+  {
+    "key": "ctrl+w L",
+    "command": "workbench.action.moveEditorToNextGroup"
+  },
+  {
+    "key": "ctrl+w H",
+    "command": "workbench.action.moveEditorToPreviousGroup"
+  },
   //----------------------------------------------------------
   // エディターにフォーカスしている時の設定(editor<->sidebarへの移動)
   //----------------------------------------------------------
@@ -36,19 +60,12 @@
     "command": "workbench.action.focusSideBar",
     "when": "editorFocus"
   },
-  // サイドバーからの移動 (ctrl+hをhにしてctrlを話すだけで切り替わる)
+  // サイドバーからの移動
   {
-    "key": "ctrl+w ctrl+l",
+    "key": "ctrl+w l",
     "command": "workbench.action.focusFirstEditorGroup",
     "when": "!editorFocus"
   },
-  // サイドバーからの移動 (ctrl+hをhにしてctrlを話すだけで切り替わる)
-  {
-    "key": "ctrl+w ctrl+l",
-    "command": "workbench.action.navigateEditorGroups",
-    "when": "!editorFocus"
-  },
-
   //----------------------------------------------------------
   // 検索関連(* -> 検索UI)
   //----------------------------------------------------------
@@ -205,7 +222,7 @@
   {
     "key": "Enter",
     "command": "explorer.openToSide",
-    "when": "explorerViewletVisible && filesExplorerFocus"
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus "
   },
   //----------------------------------------------------------
   // サイドバーのファイルをエディターで開く(サイドバー -> エディター)
@@ -288,14 +305,19 @@
   // vscodeのterminalのトグル(*->terminal)
   //----------------------------------------------------------
   {
-    "key": "[IntlYen] t",
-    "command": "workbench.action.terminal.toggleTerminal",
+    "key": "ctrl+w ctrl+j",
+    "command": "workbench.action.terminal.focus",
     "when": "!terminalFocus && vim.mode != 'SearchInProgressMode' && vim.mode != 'Insert'"
   },
   {
-    "key": "[IntlYen] t",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminalFocus && vim.mode != 'SearchInProgressMode' && vim.mode != 'Insert'"
+    "key": "ctrl+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w ctrl+h",
+    "command": "workbench.action.focusSideBar",
+    "when": "terminalFocus"
   },
 
   //----------------------------------------------------------

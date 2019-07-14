@@ -33,9 +33,10 @@
 
   // setting for vim
   "vim.useSystemClipboard": true,
-  "go.useLanguageServer": true,
   "search.location": "panel",
-  "vim.leader": "<space>",
+  "vim.leader": "\\",
+  "vim.hlsearch": true,
+  "vim.visualstar": true,
 
   // setting for go
   "go.gopath": "/Users/shusaku/go",
@@ -57,5 +58,39 @@
     "usePlaceholders": true, // add parameter placeholders when completing a function
     "enhancedHover": true // experimental to improve quality of hover (will be on by default soon)
   },
-  "go.formatOnSave": true
+  "go.formatOnSave": true,
+  "cSpell.language": "en",
+  "cSpell.enabledLanguageIds": [
+    "asciidoc",
+    "c",
+    "cpp",
+    "csharp",
+    "css",
+    "go",
+    "handlebars",
+    "html",
+    "jade",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "latex",
+    "less",
+    "markdown",
+    "php",
+    "plaintext",
+    "pub",
+    "python",
+    "restructuredtext",
+    "rust",
+    "scss",
+    "text",
+    "typescript",
+    "typescriptreact",
+    "yaml",
+    "yml"
+  ],
+  "workbench.colorTheme": "Night Owl",
+  // golang
+  "go.useLanguageServer": true,
+  "vsnotes.defaultNotePath": "/Users/shusaku/Dropbox/vsnote"
 }
